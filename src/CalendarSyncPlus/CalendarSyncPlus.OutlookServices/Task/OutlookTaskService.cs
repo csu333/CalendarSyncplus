@@ -172,7 +172,7 @@ namespace CalendarSyncPlus.OutlookServices.Task
                     if (!string.IsNullOrEmpty(profileName) && !nameSpace.CurrentProfileName.Equals(profileName))
                     {
                         throw new InvalidOperationException(
-                            $"Current Outlook instance is opened with a Different Profile Name ({nameSpace.CurrentProfileName}).{Environment.NewLine}Close Outlook and try again.");
+                            string.Format("Current Outlook instance is opened with a Different Profile Name ({0}).{1}Close Outlook and try again.", nameSpace.CurrentProfileName, Environment.NewLine));
                     }
                 }
             }

@@ -264,7 +264,7 @@ namespace CalendarSyncPlus.Services.Calendars
                     Logger.Warn("Orphan entries to delete: " + orphanEntries);
 
                     var message =
-                        $"Are you sure you want to delete {appointmentsToDelete.Count} orphan entries from {DestinationCalendarService.CalendarServiceName}?{orphanEntries}";
+                        string.Format("Are you sure you want to delete {0} orphan entries from {1}?{2}", appointmentsToDelete.Count, DestinationCalendarService.CalendarServiceName, orphanEntries);
                     var e = new SyncEventArgs(message, UserActionEnum.ConfirmDelete);
 
                     var task = syncCallback(e);
@@ -509,7 +509,7 @@ namespace CalendarSyncPlus.Services.Calendars
                 DateTime startDate, endDate;
                 GetDateRange(syncProfile, out startDate, out endDate);
                 //Add log for date range
-                CalendarSyncStatus = $"Date Range : {startDate.ToString("d")} - {endDate.ToString("d")}";
+                CalendarSyncStatus = string.Format("Date Range : {0} - {1}", startDate.ToString("d"), endDate.ToString("d"));
 
                 //Load calendar specific data
                 var sourceCalendarSpecificData =

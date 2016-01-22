@@ -12,7 +12,8 @@ namespace CalendarSyncPlus.Domain.Helpers
 
         public static string GetDescription(this Attendee attendee)
         {
-            return $"{attendee.Name} <{attendee.Email}>";
+            return string.Format("{0} <{1}>",attendee.Name, attendee.Email);
+            //return $"{attendee.Name} <{attendee.Email}>";
         }
 
         public static string GetDescriptionData(this Appointment calendarAppointment, bool addDescription,
@@ -234,7 +235,8 @@ namespace CalendarSyncPlus.Domain.Helpers
 
         public static string GetChildEntryKey(string sourceCalendarId)
         {
-            return $"Child-{GetMD5Hash(sourceCalendarId)}";
+            //return $"Child-{GetMD5Hash(sourceCalendarId)}";
+            return string.Format("Child-{0}", GetMD5Hash(sourceCalendarId));
         }
 
         private static string GetMD5Hash(string stringToHash)

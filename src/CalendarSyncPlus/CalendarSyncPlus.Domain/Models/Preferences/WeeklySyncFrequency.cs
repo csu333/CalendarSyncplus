@@ -95,7 +95,8 @@ namespace CalendarSyncPlus.Domain.Models.Preferences
 
         public override string ToString()
         {
-            var str = $"{GetType().Name} : {TimeOfDay}";
+            //var str = $"{GetType().Name} : {TimeOfDay}";
+            var str = string.Format("{0} : {1}", GetType().Name, TimeOfDay);
             return str;
         }
     }

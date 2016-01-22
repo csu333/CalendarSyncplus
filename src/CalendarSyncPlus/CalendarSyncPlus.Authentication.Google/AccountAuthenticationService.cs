@@ -341,7 +341,7 @@ namespace CalendarSyncPlus.Authentication.Google
             return GoogleWebAuthorizationBroker.AuthorizeAsync(
                 new ClientSecrets {ClientId = clientId, ClientSecret = clientSecret}
                 , scopes
-                , $"-{userName}-googletoken"
+                , string.Format("-{0}-googletoken", userName)
                 , cancellationToken
                 , fileDataStore);
         }
@@ -398,7 +398,7 @@ namespace CalendarSyncPlus.Authentication.Google
             var auth = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                         new ClientSecrets {ClientId = Constants.ClientId, ClientSecret = Constants.ClientSecret}
                         , scopes
-                        , $"-{accountName}-googletoken"
+                        , string.Format("-{0}-googletoken", accountName)
                         , cancellationToken
                         , fileDataStore);
             return auth != null;
@@ -460,7 +460,7 @@ namespace CalendarSyncPlus.Authentication.Google
                 var authTask = await new AuthorizationCodeInstalledApp(
                     new GoogleAuthorizationCodeFlow(initializer),
                     new CustomCodeReceiver(getCodeDeledateFunc))
-                    .AuthorizeAsync($"-{accountName}-googletoken", CancellationToken.None);
+                    .AuthorizeAsync(string.Format("-{0}-googletoken", accountName), CancellationToken.None);
 
                 var service = new CalendarService(new BaseClientService.Initializer
                 {

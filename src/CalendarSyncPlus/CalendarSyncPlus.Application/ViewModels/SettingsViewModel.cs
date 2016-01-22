@@ -338,7 +338,7 @@ namespace CalendarSyncPlus.Application.ViewModels
                     case ProxyType.ProxyWithAuth:
                         proxy =
                             new WebProxy(
-                                new Uri($"{proxySettings.ProxyAddress}:{proxySettings.Port}"),
+                                new Uri(string.Format("{0}:{1}", proxySettings.ProxyAddress, proxySettings.Port)),
                                 proxySettings.BypassOnLocal)
                             {
                                 UseDefaultCredentials = proxySettings.UseDefaultCredentials
@@ -428,7 +428,7 @@ namespace CalendarSyncPlus.Application.ViewModels
                 while (timeInSeconds > 0)
                 {
                     progressDialogController.SetMessage(
-                        $"Authenticate and Authorize in the browser window in {timeInSeconds} secs");
+                        string.Format("Authenticate and Authorize in the browser window in {0} secs", timeInSeconds));
 
                     //cancel task if cancellation is requested
                     if (progressDialogController.IsCanceled)

@@ -104,7 +104,8 @@ namespace CalendarSyncPlus.Domain.Models.Preferences
 
         public override string ToString()
         {
-            var str = $"{GetType().Name} : Minute Offset : {Minutes}";
+            //var str = $"{GetType().Name} : Minute Offset : {Minutes}";
+            var str = string.Format("{0} : Minute Offset : {1}", GetType().Name, Minutes);
             return str;
         }
     }

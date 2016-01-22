@@ -126,7 +126,7 @@ namespace CalendarSyncPlus.Application.ViewModels
                 if (_applicationUpdateService.IsNewVersionAvailable())
                 {
                     UpdateText =
-                        $"New version available for download : {_applicationUpdateService.GetNewAvailableVersion()}";
+                        string.Format("New version available for download : {0}", _applicationUpdateService.GetNewAvailableVersion());
                     IsLatestVersionAvailable = true;
                 }
                 else

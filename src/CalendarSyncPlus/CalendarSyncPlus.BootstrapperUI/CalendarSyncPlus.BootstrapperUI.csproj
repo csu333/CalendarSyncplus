@@ -33,10 +33,13 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BootstrapperCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ce35f76fcda82bad, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WiX Toolset v3.9\SDK\BootstrapperCore.dll</HintPath>
+      <HintPath>\\nbb.local\USR\CADIATJ\Documents\Visual Studio 2012\Filter Library\WiX\sdk\BootstrapperCore.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=1.1.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net40\MahApps.Metro.dll</HintPath>
@@ -44,15 +47,15 @@
     </Reference>
     <Reference Include="Microsoft.Deployment.WindowsInstaller, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ce35f76fcda82bad, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WiX Toolset v3.9\SDK\Microsoft.Deployment.WindowsInstaller.dll</HintPath>
+      <HintPath>\\nbb.local\USR\CADIATJ\Documents\Visual Studio 2012\Filter Library\WiX\sdk\Microsoft.Deployment.WindowsInstaller.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Deployment.WindowsInstaller.Linq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ce35f76fcda82bad, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WiX Toolset v3.9\SDK\Microsoft.Deployment.WindowsInstaller.Linq.dll</HintPath>
+      <HintPath>\\nbb.local\USR\CADIATJ\Documents\Visual Studio 2012\Filter Library\WiX\sdk\Microsoft.Deployment.WindowsInstaller.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Deployment.WindowsInstaller.Package, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ce35f76fcda82bad, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\WiX Toolset v3.9\SDK\Microsoft.Deployment.WindowsInstaller.Package.dll</HintPath>
+      <HintPath>\\nbb.local\USR\CADIATJ\Documents\Visual Studio 2012\Filter Library\WiX\sdk\Microsoft.Deployment.WindowsInstaller.Package.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -119,6 +122,9 @@
   <ItemGroup>
     <Content Include="Resources\Entypo-license.txt" />
     <Content Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

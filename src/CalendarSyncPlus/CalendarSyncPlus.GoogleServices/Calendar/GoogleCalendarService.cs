@@ -524,27 +524,27 @@ namespace CalendarSyncPlus.GoogleServices.Calendar
             object calendarIdValue;
             if (!calendarSpecificData.TryGetValue(dictionaryKey_CalendarId, out calendarIdValue))
             {
-                throw new InvalidOperationException($"{dictionaryKey_CalendarId} is a required.");
+                throw new InvalidOperationException(string.Format("{0} is a required.", dictionaryKey_CalendarId));
             }
 
             CalendarId = calendarIdValue as string;
 
             if (string.IsNullOrEmpty(CalendarId))
             {
-                throw new InvalidOperationException($"{dictionaryKey_CalendarId} cannot be null or empty.");
+                throw new InvalidOperationException(string.Format("{0} cannot be null or empty.", dictionaryKey_CalendarId));
             }
 
             object accountNameValue;
             if (!calendarSpecificData.TryGetValue(dictionaryKey_AccountName, out accountNameValue))
             {
-                throw new InvalidOperationException($"{dictionaryKey_AccountName} is a required.");
+                throw new InvalidOperationException(string.Format("{0} is a required.", dictionaryKey_AccountName));
             }
 
             AccountName = accountNameValue as string;
 
             if (string.IsNullOrEmpty(AccountName))
             {
-                throw new InvalidOperationException($"{dictionaryKey_CalendarId} cannot be null or empty.");
+                throw new InvalidOperationException(string.Format("{0} cannot be null or empty.", dictionaryKey_CalendarId));
             }
 
             object eventCategory;
