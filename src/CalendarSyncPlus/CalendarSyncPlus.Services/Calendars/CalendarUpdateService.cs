@@ -578,7 +578,7 @@ namespace CalendarSyncPlus.Services.Calendars
         private void GetDateRange(CalendarSyncProfile syncProfile, out DateTime startDate, out DateTime endDate)
         {
             startDate = syncProfile.SyncSettings.StartDate.Date;
-            endDate = syncProfile.SyncSettings.EndDate.Date;
+            endDate = syncProfile.SyncSettings.EndDate.Date + TimeSpan.FromDays(1) - TimeSpan.FromSeconds(1);
             if (syncProfile.SyncSettings.SyncRangeType == SyncRangeTypeEnum.SyncRangeInDays)
             {
                 startDate = DateTime.Today.AddDays((-syncProfile.SyncSettings.DaysInPast));
